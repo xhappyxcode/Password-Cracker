@@ -23,9 +23,9 @@ import java.util.logging.Logger;
  * @author Joy
  */
 public class ReadFile {
-//    private String path;
+    private String path;
 
-    private BufferedReader br;
+    /*private BufferedReader br;
     private File txtFile;
     private FileInputStream fis;
     private String line, text;
@@ -62,9 +62,13 @@ public class ReadFile {
     
     public String getFileContents() {
         return this.text;
+    }*/
+    
+    public ReadFile(String file_path) {
+        this.path = file_path;
     }
-
-    /*public ArrayList<String> OpenFile() throws IOException {
+    
+    public ArrayList<String> OpenFile() throws IOException {
         ArrayList<String> textData = new ArrayList<String>();
         try {
             FileReader file = new FileReader(path);
@@ -81,5 +85,5 @@ public class ReadFile {
             System.out.println("File not found!");
         }
         return textData;
-    }*/
+    }
 }

@@ -23,6 +23,10 @@ public class Controller {
     
     private ArrayList<User> users;
     
+    public Controller() {
+        users = new ArrayList<User>();
+    }
+    
     /* open and read files then save data */
     public void readFiles() throws IOException {
         String passwd_path = "src\\textFiles\\passwd.txt";
@@ -46,21 +50,39 @@ public class Controller {
             currentLine = passwdData.get(i);
             lineData = currentLine.split(SEMI_COLON);
             int userId = Integer.parseInt(lineData[2]);
-            if(userId < LIMIT) {
+            if(userId > LIMIT) {
                 user = new User();
                 user.setUsername(lineData[0]);
                 user.setPassword(lineData[1]);
                 user.setFullname(lineData[4]);
-                System.out.println(user);
+//                System.out.println(user);
                 users.add(user);
             }
         }
     }
     
     public void readShadowData() {
-        String currentLine = shadowData.get(0);
-        String lineData[] = currentLine.split(SEMI_COLON);
-        
+        String currentLine, username, password;
+        String lineData[];
+        User user;
+        int currUser;
+        boolean found;
+        for(int i = 0; i < shadowData.size(); i++) {
+            currentLine = shadowData.get(i);
+            lineData = currentLine.split(SEMI_COLON);
+            username = lineData[0];
+            password = lineData[1];
+            found = false;
+            currUser = 0;
+            while(currUser < users.size() && found == false) {
+                user = users.get(currUser);
+                if(user.getUsername().contentEquals(username)) {
+                    user.setPassword(password);
+                    System.out.println(user.toString());
+                }
+                currUser++;
+            }
+        }
     }
 
     /**
