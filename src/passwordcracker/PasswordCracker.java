@@ -7,6 +7,7 @@ package passwordcracker;
 
 import java.io.IOException;
 import java.util.ArrayList;
+import view.MainFrame;
 
 /**
  *
@@ -18,13 +19,13 @@ public class PasswordCracker {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-        Controller controller = new Controller();
-        controller.readFiles();
-//        ArrayList<String> textData = controller.getDictionaryData();
+//        String path = "C:\\Users\\Joy\\Downloads\\DLSU\\ETHIHAC\\Linux passwd_shadow File Password Cracker\\PasswordCracker\\src\\textFiles\\passwd.txt";
+//        ReadFile readFile = new ReadFile(path);
+//        ArrayList<String> textData = readFile.OpenFile();
 //        for(int i = 0; i < textData.size(); i++) {
 //            System.out.println(textData.get(i));
 //        }
-        controller.readPasswdData();
+        MainFrame frame = new MainFrame();
     }
-    
+
 }
