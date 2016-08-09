@@ -19,13 +19,11 @@ public class PasswordCracker {
      * @param args the command line arguments
      */
     public static void main(String[] args) throws IOException {
-//        String path = "C:\\Users\\Joy\\Downloads\\DLSU\\ETHIHAC\\Linux passwd_shadow File Password Cracker\\PasswordCracker\\src\\textFiles\\passwd.txt";
-//        ReadFile readFile = new ReadFile(path);
-//        ArrayList<String> textData = readFile.OpenFile();
-//        for(int i = 0; i < textData.size(); i++) {
-//            System.out.println(textData.get(i));
-//        }
-        MainFrame frame = new MainFrame();
+        Controller controller = new Controller();
+        controller.readFiles();
+        controller.readPasswdData();
+        controller.readShadowData();
+//        MainFrame frame = new MainFrame();
     }
 
 }
