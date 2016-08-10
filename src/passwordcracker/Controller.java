@@ -156,7 +156,7 @@ public class Controller {
     public void createFile(String text) {
     	JFrame parentFrame = new JFrame();
     	 
-    	JFileChooser fileChooser = new JFileChooser(new File("C:\\"));
+    	JFileChooser fileChooser = new JFileChooser(new File("C:\\Users\\"));
     	fileChooser.setDialogTitle("Specify a file to save");   
     	fileChooser.setFileFilter(new FileTypeFilter(".txt", "Text File"));
     	int userSelection = fileChooser.showSaveDialog(parentFrame);
