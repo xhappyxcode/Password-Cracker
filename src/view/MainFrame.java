@@ -129,7 +129,6 @@ public class MainFrame extends JFrame implements ActionListener {
 			txtAreaOutput.setText(mc.getResult());
 		} else if(e.getSource() == btnSave) {
 			mc.createFile(txtAreaOutput.getText());
-			JOptionPane.showMessageDialog(null, "Results are saved.");
 		}
     }
 	
