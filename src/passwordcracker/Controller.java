@@ -114,6 +114,8 @@ public class Controller {
                         sb.append("Fullname: " + users.get(currUser).getFullname() + "\t\t\tUsername: " + users.get(currUser).getUsername() + "\t\t\tPassword: " + dictionaryData.get(i) + "\n");
                         matched = true;
                         break;
+                    } else {
+                        matched = false;
                     }
                 }
                 
@@ -168,6 +170,8 @@ public class Controller {
     	    	fw.write(text);
     	    	fw.flush();
     	    	fw.close();
+                     
+		JOptionPane.showMessageDialog(null, "Results are saved.");
     	    } catch(Exception e2) {
     	    	JOptionPane.showMessageDialog(null, e2.getMessage());
     	    }
